@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Daily Standup",
+    "startTime": "2025-06-23T00:00:00",
+    "endTime": "2025-06-23T01:30:00",
+    "color": "#f6be23"
+  },
+  {
+    "title": "Weekly Catchup",
+    "startTime": "2025-06-24T04:30:00",
+    "endTime": "2025-06-24T07:30:00",
+    "color": "#f6501e"
+  },
+  {
+    "title": "Nisar birthday",
+    "startTime": "2025-09-25T04:30:00",
+    "endTime": "2025-09-25T07:30:00",
+    "color": "#f6501e"
+  },
+  {
+    "title": "company day",
+    "startTime": "2025-09-29T04:30:00",
+    "endTime": "2025-09-29T07:30:00",
+    "color": "#f6501e"
+  },
+  {
+    "title": "My Wedding day",
+    "startTime": "2025-06-26T00:15:00",
+    "endTime": "2025-06-28T01:30:00",
+    "color": "#f6be23"
+  },
+   {
+    "title": "Independence Day",
+    "startTime": "2025-09-15T04:30:00",
+    "endTime": "2025-09-25T07:30:00",
+    "color": "#f6501e"
+  }
+]

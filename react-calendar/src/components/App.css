@@ -1,0 +1,26 @@
+/* App.css */
+
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8fafc; /* Light gray background for the app */
+  margin: 0;
+  padding: 0;
+}
+
+/* Highlight the calendar container */
+.calendar-container {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Event-specific styles */
+.event-item {
+  font-size: 0.75rem; /* Make events small but readable */
+  padding: 4px 8px;
+  border-radius: 8px;
+  margin: 2px 0;
+  color: white;
+}
