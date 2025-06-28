@@ -54,28 +54,37 @@ const GoogleCalendarClone = () => {
             <div key={day} className="text-[10px] text-center font-medium">{day}</div>
           ))}
         </div>
-        <div className="grid grid-cols-7 gap-0.5">
-          {days.map((d, i) => (
-            <div
-              key={i}
-              className="h-8 border rounded p-0.5 align-top relative bg-white"
-              style={{ minHeight: 0, fontSize: "11px" }}
-            >
-              {d && (
-                <>
-                  <div className="text-[10px] font-bold leading-none">{d}</div>
-                  {events
-                    .filter(ev => dayjs(ev.date).isSame(dayjs([year, month, d]), "day"))
-                    .map(ev => (
-                      <div key={ev.id} className="bg-blue-100 text-blue-800 rounded px-0.5 text-[9px] mt-0.5 truncate">
-                        {ev.title} {ev.startTime}
-                      </div>
-                    ))}
-                </>
-              )}
-            </div>
-          ))}
-        </div>
+ 
+<div className="grid grid-cols-5 gap-0.5">
+  {days.map((d, i) => (
+    <div
+      key={i}
+      className={`
+        h-10 border rounded-lg p-2 align-top relative bg-white transition
+        ${d && dayjs([year, month, d]).isSame(dayjs(), "day") ? "border-blue-500 shadow-lg" : ""}
+        ${d && dayjs([year, month, d]).isSame(selectedDate, "day") ? "ring-2 ring-blue-400" : ""}
+        hover:bg-blue-50
+      `}
+    >
+      {d && (
+        <>
+          <div className="text-xs font-bold text-gray-700">{d}</div>
+          {events
+            .filter(ev => dayjs(ev.date).isSame(dayjs([year, month, d]), "day"))
+            .map(ev => (
+              <div
+                key={ev.id}
+                className="bg-gradient-to-r from-blue-400 to-blue-600 text-white rounded px-2 py-1 text-xs mt-1 truncate shadow"
+              >
+                {ev.title} <span className="font-gray">{ev.startTime}</span>
+              </div>
+            ))}
+        </>
+      )}
+    </div>
+  ))}
+</div>
+
       </div>
     );
   };
@@ -281,7 +290,7 @@ const GoogleCalendarClone = () => {
       </div>
       <div className="flex">
         {/* Sidebar */}
-        <aside className="w-72 p-6 border-r bg-white min-h-screen shadow-sm">
+        <aside className="w-72 p-6 border-r bg-gray min-h-screen shadow-sm">
           <button
             className="flex items-center space-x-2 bg-blue-600 text-white px-5 py-3 rounded-lg hover:bg-blue-700 shadow transition mb-8 font-semibold"
             onClick={() => setShowCreateModal(true)}
@@ -294,7 +303,7 @@ const GoogleCalendarClone = () => {
         </aside>
         {/* Main content */}
         <main className="flex-1 p-8">
-          <div className="bg-white rounded-xl shadow-lg p-6">
+          <div className="bg-blue rounded-xl shadow-lg p-6">
             {view === "Year" && <YearGrid />}
             {view === "Month" && (
               <MonthGrid year={selectedDate.year()} month={selectedDate.month()} />
