@@ -49,16 +49,16 @@ const GoogleCalendarClone = () => {
           <button onClick={() => setSelectedDate(selectedDate.add(1, "month"))}>&gt;</button>
         </div>
 
-        <div className="grid grid-cols-7 gap-0.5 mb-1">
+        <div className="grid grid-cols-7 gap-px mb-1">
           {dayNames.map(day => (
             <div key={day} className="text-[10px] text-center font-medium">{day}</div>
           ))}
         </div>
- 
-<div className="grid grid-cols-5 gap-0.5">
-  {days.map((d, i) => (
-    <div
-      key={i}
+
+        <div className="grid grid-cols-7 gap-0.8">
+          {days.map((d, i) => (
+            <div
+              key={i}
       className={`
         h-10 border rounded-lg p-2 align-top relative bg-white transition
         ${d && dayjs([year, month, d]).isSame(dayjs(), "day") ? "border-blue-500 shadow-lg" : ""}
