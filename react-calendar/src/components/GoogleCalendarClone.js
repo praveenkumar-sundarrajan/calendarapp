@@ -363,21 +363,23 @@ const GoogleCalendarClone = () => {
             <button
               className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 shadow float-right mt-6 font-semibold transition"
               onClick={() => {
-                setEvents([
-                  ...events,
-                  { ...newEvent, id: Date.now() }
-                ]);
-                setShowCreateModal(false);
-                setNewEvent({
-                  title: "",
-                  date: dayjs().format("YYYY-MM-DD"),
-                  startTime: "18:00",
-                  endTime: "19:00",
-                  description: "",
-                  location: "",
-                  guests: "",
-                });
-              }}
+  setEvents([
+    ...events,
+    { ...newEvent, id: Date.now() }
+  ]);
+  setShowCreateModal(false);
+  setSelectedDate(dayjs(newEvent.date)); // <-- Add this
+  setView("Month"); // <-- Add this
+  setNewEvent({
+    title: "",
+    date: dayjs().format("YYYY-MM-DD"),
+    startTime: "18:00",
+    endTime: "19:00",
+    description: "",
+    location: "",
+    guests: "",
+  });
+}}
             >
               Save
             </button>

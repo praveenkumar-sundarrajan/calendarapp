@@ -7,7 +7,7 @@ const CalendarHeader = ({ currentDate, onPrevious, onNext, view }) => {
         onClick={onPrevious}
         className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
       >
-        ← Previous
+        ← PREVIOUS
       </button>
       <h2 className="text-2xl font-bold text-gray-800">
         {currentDate.format("MMMM YYYY")}
@@ -16,7 +16,7 @@ const CalendarHeader = ({ currentDate, onPrevious, onNext, view }) => {
         onClick={onNext}
         className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
       >
-        Next →
+        NEXT→
       </button>
     </div>
   );
